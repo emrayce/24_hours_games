@@ -12,5 +12,6 @@ public class CameraBehaviour : MonoBehaviour
     {
         Vector3 newPosition = offset + target.position;
         transform.position = newPosition;
+        transform.LookAt(target.position);
     }
 }
