@@ -6,11 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
 
-    private Rigidbody _rb;
+    private Rigidbody rb;
 
     private void Awake()
     {
-        _rb = gameObject.GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
     }
     // Start is called before the first frame update
     void Start()
@@ -42,6 +42,6 @@ public class PlayerController : MonoBehaviour
             acceleration += speed * Vector3.back;
         }
 
-        _rb.AddForce(acceleration, ForceMode.Acceleration);
+        rb.AddForce(acceleration);
     }
 }
