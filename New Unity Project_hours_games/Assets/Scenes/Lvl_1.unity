@@ -300,12 +300,12 @@ PrefabInstance:
     - target: {fileID: 1143031159098369564, guid: 4483d968dc7a05f40a2fe51bfcce2aa1,
         type: 3}
       propertyPath: offset.y
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1143031159098369564, guid: 4483d968dc7a05f40a2fe51bfcce2aa1,
         type: 3}
       propertyPath: offset.z
-      value: -6
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 1143031159098369565, guid: 4483d968dc7a05f40a2fe51bfcce2aa1,
         type: 3}
