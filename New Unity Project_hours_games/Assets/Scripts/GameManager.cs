@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     // The time in seconds
     public float time;
-    public bool gameOver => time < 0;
+    public bool gameOver => time <= 0;
 
     public int toPick;
     private int pickedUp = 0;
@@ -45,9 +45,10 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         gameOverText.enabled = true;
+        DisplayTime(0);
     }
 
-    private void BananaPicked()
+    public void BananaPicked()
     {
         pickedUp++;
         bananaCollect.text = pickedUp.ToString() + " / " + toPick.ToString();
@@ -55,8 +56,7 @@ public class GameManager : MonoBehaviour
 
     private void DisplayTime(float time)
     {
-        int minutes = Mathf.FloorToInt(time / 60);
-        int seconds = Mathf.FloorToInt(time % 60);
-        timeText.text = minutes.ToString() + ":" + seconds;
+        int seconds = Mathf.FloorToInt(time);
+        timeText.text = seconds.ToString();
     }
 }
