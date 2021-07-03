@@ -491,6 +491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 315241046}
   - component: {fileID: 315241047}
+  - component: {fileID: 315241048}
   m_Layer: 0
   m_Name: DeathWall
   m_TagString: Untagged
@@ -506,7 +507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315241045}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.19, y: 0, z: 16.3}
+  m_LocalPosition: {x: 5.19, y: -14.74, z: 16.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1990827785}
@@ -525,6 +526,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100, y: 0.1, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &315241048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315241045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6439e2ab16c430949af16f20605ae29a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 140815002}
 --- !u!1001 &343175842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -644,6 +658,11 @@ PrefabInstance:
     - target: {fileID: 7727897481075676698, guid: f22f1cf0447192f4dabaeff04ad1371d,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7727897481075676698, guid: f22f1cf0447192f4dabaeff04ad1371d,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7727897481075676699, guid: f22f1cf0447192f4dabaeff04ad1371d,
