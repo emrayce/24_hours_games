@@ -16,12 +16,14 @@ public class GameManager : MonoBehaviour
     public Text bananaCollect;
     public Text timeText;
     public Text gameOverText;
+    public Button restart;
 
     private void Start()
     {
         DisplayTime(time);
         bananaCollect.text = pickedUp.ToString() + " / " + toPick.ToString();
         gameOverText.enabled = false;
+        restart.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         gameOverText.enabled = true;
+        restart.gameObject.SetActive(true);
         DisplayTime(0);
     }
 
