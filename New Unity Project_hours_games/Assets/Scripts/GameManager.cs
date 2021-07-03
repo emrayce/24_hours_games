@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         DisplayTime(time);
         bananaCollect.text = pickedUp.ToString() + " / " + toPick.ToString();
         gameOverText.enabled = false;
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
+        Time.timeScale = 0f;
         gameOverText.enabled = true;
         restart.gameObject.SetActive(true);
         DisplayTime(0);
