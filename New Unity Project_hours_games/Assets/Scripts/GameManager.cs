@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     // The time in seconds
     public float time;
     public bool gameOver => time <= 0;
+    public bool victory => toPick == pickedUp;
 
     public int toPick;
     private int pickedUp = 0;
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     public Text bananaCollect;
     public Text timeText;
     public GameObject gameOverPanel;
+    public GameObject victoryPanel;
 
     private void Start()
     {
@@ -23,11 +25,16 @@ public class GameManager : MonoBehaviour
         DisplayTime(time);
         bananaCollect.text = pickedUp.ToString() + " / " + toPick.ToString();
         gameOverPanel.gameObject.SetActive(false);
+        victoryPanel.SetActive(false);
     }
 
     private void Update()
     {
-        if (gameOver)
+        if (victory)
+        {
+            Victory();
+        }
+        else if (gameOver)
         {
             GameOver();
         }
@@ -48,6 +55,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         gameOverPanel.gameObject.SetActive(true);
         DisplayTime(0);
+    }
+
+    private void Victory()
+    {
+        victoryPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void BananaPicked()
