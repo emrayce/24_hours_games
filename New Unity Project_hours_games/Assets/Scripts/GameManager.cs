@@ -59,8 +59,8 @@ public class GameManager : MonoBehaviour
 
     private void Victory()
     {
-        victoryPanel.SetActive(true);
         Time.timeScale = 0f;
+        victoryPanel.SetActive(true);
     }
 
     public void BananaPicked()
