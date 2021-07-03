@@ -15,16 +15,14 @@ public class GameManager : MonoBehaviour
     // Canvas fields
     public Text bananaCollect;
     public Text timeText;
-    public Text gameOverText;
-    public Button restart;
+    public GameObject gameOverPanel;
 
     private void Start()
     {
         Time.timeScale = 1f;
         DisplayTime(time);
         bananaCollect.text = pickedUp.ToString() + " / " + toPick.ToString();
-        gameOverText.enabled = false;
-        restart.gameObject.SetActive(false);
+        gameOverPanel.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -48,8 +46,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         Time.timeScale = 0f;
-        gameOverText.enabled = true;
-        restart.gameObject.SetActive(true);
+        gameOverPanel.gameObject.SetActive(true);
         DisplayTime(0);
     }
 
