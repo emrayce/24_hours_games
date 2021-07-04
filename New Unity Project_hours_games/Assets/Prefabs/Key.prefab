@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8308279799423288535}
   - component: {fileID: 8308279799423288532}
   - component: {fileID: 8308279799423288533}
+  - component: {fileID: 3006395668672051231}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -61,6 +62,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 50
   FloatingSpeed: 0.1
+--- !u!65 &3006395668672051231
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8308279799423288530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &8308279800030060737
 PrefabInstance:
   m_ObjectHideFlags: 0
