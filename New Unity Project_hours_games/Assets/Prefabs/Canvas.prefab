@@ -1183,7 +1183,6 @@ GameObject:
   - component: {fileID: 2792076178961527186}
   - component: {fileID: 3656586794965338623}
   - component: {fileID: 5853200196072475973}
-  - component: {fileID: 5921395229121702621}
   - component: {fileID: 3451829553283646678}
   m_Layer: 5
   m_Name: NextLvl
@@ -1292,8 +1291,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5921395229121702621}
-        m_MethodName: ReloadLevel
+      - m_Target: {fileID: 3451829553283646678}
+        m_MethodName: PasstoNextLvl
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1303,18 +1302,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5921395229121702621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3457195105045817986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0f28d8d9dbb97445a0fab6a982b7423, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3451829553283646678
 MonoBehaviour:
   m_ObjectHideFlags: 0
