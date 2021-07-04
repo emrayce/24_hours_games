@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public Text timeText;
     public GameObject gameOverPanel;
     public GameObject victoryPanel;
+    public GameObject pausePanel;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
         bananaCollect.text = pickedUp.ToString() + " / " + toPick.ToString();
         gameOverPanel.gameObject.SetActive(false);
         victoryPanel.SetActive(false);
+        pausePanel.SetActive(false);
     }
 
     private void Update()
@@ -41,6 +43,12 @@ public class GameManager : MonoBehaviour
         else
         {
             DecreaseTime();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0f;
+            pausePanel.SetActive(true);
         }
     }
 
@@ -73,5 +81,11 @@ public class GameManager : MonoBehaviour
     {
         int seconds = Mathf.FloorToInt(time);
         timeText.text = seconds.ToString();
+    }
+
+    public void Resume()
+    {
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
