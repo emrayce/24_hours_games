@@ -100,12 +100,6 @@ public class GameManager : MonoBehaviour
         timeText.text = seconds.ToString();
     }
 
-    public void Resume()
-    {
-        pausePanel.SetActive(false);
-        Time.timeScale = 1f;
-    }
-
     public bool IsEverythingCollected()
     {
         return pickedUp == toPick;
