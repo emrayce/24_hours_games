@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     // The time in seconds
     public float time;
     public bool gameOver => time <= 0;
-    public bool victory => toPick == pickedUp;
 
     public int toPick;
     private int pickedUp = 0;
@@ -32,11 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (victory)
-        {
-            Victory();
-        }
-        else if (gameOver)
+        if (gameOver)
         {
             GameOver();
         }
@@ -65,7 +60,7 @@ public class GameManager : MonoBehaviour
         DisplayTime(0);
     }
 
-    private void Victory()
+    public void Victory()
     {
         Time.timeScale = 0f;
         victoryPanel.SetActive(true);
@@ -87,5 +82,10 @@ public class GameManager : MonoBehaviour
     {
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    public bool IsEverythingCollected()
+    {
+        return pickedUp == toPick;
     }
 }
