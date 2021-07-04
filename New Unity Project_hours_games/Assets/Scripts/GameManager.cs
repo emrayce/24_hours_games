@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public int toPick;
     private int pickedUp = 0;
 
+    private int key = 0;
+
     // Canvas fields
     public Text bananaCollect;
     public Text timeText;
@@ -70,6 +72,21 @@ public class GameManager : MonoBehaviour
     {
         pickedUp++;
         bananaCollect.text = pickedUp.ToString() + " / " + toPick.ToString();
+    }
+
+    public void KeyPicked()
+    {
+        key++;
+    }
+
+    public void UseKey()
+    {
+        key--;
+    }
+
+    public bool GotKey()
+    {
+        return key > 0;
     }
 
     private void DisplayTime(float time)
