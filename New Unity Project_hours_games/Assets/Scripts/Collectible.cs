@@ -4,10 +4,26 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
+    enum Pickable
+    {
+        Banana,
+        Key
+    }
+
     public GameManager gameManager;
+   
+    [SerializeField] private Pickable type;
+
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
-        gameManager.BananaPicked();
+        if (type == Pickable.Banana)
+        {
+            gameManager.BananaPicked();
+        }
+        else
+        {
+            gameManager.KeyPicked();
+        }
     }
 }
