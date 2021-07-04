@@ -14,3 +14,6 @@ Third version of the game just before the deadline
 3Level now with bumper
 
 Enjoy :D
+
+
+ZQSD to move the ball
