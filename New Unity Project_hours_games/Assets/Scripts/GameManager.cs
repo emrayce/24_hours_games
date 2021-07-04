@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     // Canvas fields
     public Text bananaCollect;
+    public Text keyCollect;
     public Text timeText;
     public GameObject gameOverPanel;
     public GameObject victoryPanel;
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         DisplayTime(time);
         bananaCollect.text = pickedUp.ToString() + " / " + toPick.ToString();
+        keyCollect.text = key.ToString();
+
         gameOverPanel.gameObject.SetActive(false);
         victoryPanel.SetActive(false);
         pausePanel.SetActive(false);
@@ -77,11 +80,13 @@ public class GameManager : MonoBehaviour
     public void KeyPicked()
     {
         key++;
+        keyCollect.text = key.ToString();
     }
 
     public void UseKey()
     {
         key--;
+        keyCollect.text = key.ToString();
     }
 
     public bool GotKey()
