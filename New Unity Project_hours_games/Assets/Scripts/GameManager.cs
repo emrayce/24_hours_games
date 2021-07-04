@@ -8,39 +8,47 @@ public class GameManager : MonoBehaviour
     // The time in seconds
     public float time;
     public bool gameOver => time <= 0;
-    public bool victory => toPick == pickedUp;
 
     public int toPick;
     private int pickedUp = 0;
 
+    private int key = 0;
+
     // Canvas fields
     public Text bananaCollect;
+    public Text keyCollect;
     public Text timeText;
     public GameObject gameOverPanel;
     public GameObject victoryPanel;
+    public GameObject pausePanel;
 
     private void Start()
     {
         Time.timeScale = 1f;
         DisplayTime(time);
         bananaCollect.text = pickedUp.ToString() + " / " + toPick.ToString();
+        keyCollect.text = key.ToString();
+
         gameOverPanel.gameObject.SetActive(false);
         victoryPanel.SetActive(false);
+        pausePanel.SetActive(false);
     }
 
     private void Update()
     {
-        if (victory)
-        {
-            Victory();
-        }
-        else if (gameOver)
+        if (gameOver)
         {
             GameOver();
         }
         else
         {
             DecreaseTime();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0f;
+            pausePanel.SetActive(true);
         }
     }
 
@@ -57,7 +65,7 @@ public class GameManager : MonoBehaviour
         DisplayTime(0);
     }
 
-    private void Victory()
+    public void Victory()
     {
         Time.timeScale = 0f;
         victoryPanel.SetActive(true);
@@ -69,9 +77,37 @@ public class GameManager : MonoBehaviour
         bananaCollect.text = pickedUp.ToString() + " / " + toPick.ToString();
     }
 
+    public void KeyPicked()
+    {
+        key++;
+        keyCollect.text = key.ToString();
+    }
+
+    public void UseKey()
+    {
+        key--;
+        keyCollect.text = key.ToString();
+    }
+
+    public bool GotKey()
+    {
+        return key > 0;
+    }
+
     private void DisplayTime(float time)
     {
         int seconds = Mathf.FloorToInt(time);
         timeText.text = seconds.ToString();
+    }
+
+    public void Resume()
+    {
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public bool IsEverythingCollected()
+    {
+        return pickedUp == toPick;
     }
 }
