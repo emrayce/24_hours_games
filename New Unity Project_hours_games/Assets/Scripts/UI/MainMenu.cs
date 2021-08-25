@@ -9,28 +9,44 @@ public class MainMenu : MonoBehaviour
 
     public Image mainMenu;
     public Image lvlSelection;
+    public Image gameSelection;
+
+    private Image currentMenu;
+
     private string scene = "Lvl_";
 
     public void Start()
     {
+        gameSelection.gameObject.SetActive(false);
         lvlSelection.gameObject.SetActive(false);
+
+        currentMenu = mainMenu;
     }
 
     public void Quit()
     {
         Application.Quit();
     }
-
+        
     public void ToLvlSelection()
     {
-        mainMenu.gameObject.SetActive(false);
-        lvlSelection.gameObject.SetActive(true);
+        currentMenu.gameObject.SetActive(false);
+        currentMenu = lvlSelection;
+        currentMenu.gameObject.SetActive(true);
+    }
+
+    public void ToGameSelection()
+    {
+        currentMenu.gameObject.SetActive(false);
+        currentMenu = gameSelection;
+        currentMenu.gameObject.SetActive(true);
     }
 
     public void ToMainMenu()
     {
-        lvlSelection.gameObject.SetActive(false);
-        mainMenu.gameObject.SetActive(true);
+        currentMenu.gameObject.SetActive(false);
+        currentMenu = mainMenu;
+        currentMenu.gameObject.SetActive(true);
     }
 
     public void SelectLvl(int lvl)
